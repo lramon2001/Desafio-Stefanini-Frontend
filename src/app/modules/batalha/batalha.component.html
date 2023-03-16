@@ -1,0 +1,31 @@
+<header>
+    <h1>Batalha</h1>
+  </header>
+
+<div style="width: 100%; display: flex; flex-grow: 1; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+    <ng-container *ngFor="let stefamon of stefamonList">
+      <p-card header="{{ stefamon.nome }}" styleClass="p-card-shadow"
+              [style]="{'width': '200px', 'margin-bottom': '2em'}">
+        <p-header>
+          <div style="width: 100%; padding: 1rem;">
+            <img alt="Card" src="{{ stefamon.urlFoto }}">
+          </div>
+        </p-header>
+        <p>Atributos</p>
+      </p-card>
+    </ng-container>
+    <div>
+        <h1>Vs</h1>
+    </div>
+    <ng-container *ngFor="let stefamon of stefamonList">
+        <p-card header="{{ stefamon.nome }}" styleClass="p-card-shadow"
+                [style]="{'width': '200px', 'margin-bottom': '2em'}">
+          <p-header>
+            <div style="width: 100%; padding: 1rem;">
+              <img alt="Card" src="{{ stefamon.urlFoto }}">
+            </div>
+          </p-header>
+          <p>Atributos</p>
+        </p-card>
+      </ng-container>
+  </div>

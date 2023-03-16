@@ -1,0 +1,13 @@
+.h-100 {
+  height: 90vh;
+}
+
+.p-grid {
+  margin: 0;
+}
+
+.card-cadastro {
+  /* height: 330px; */
+  background-color: #242a35;
+  color: #dddddd;
+}

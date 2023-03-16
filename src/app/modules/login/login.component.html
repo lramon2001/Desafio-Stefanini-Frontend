@@ -1,0 +1,30 @@
+<div class="p-d-flex p-jc-center p-ai-center" style="height: 100vh; background-color: #f5f5f5;">
+  <div class="p-col-12 p-md-3 p-jc-end p-shadow-3 p-p-5 card-cadastro">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="p-fluid p-p-2">
+        <h1 class="p-text-center">Stefanini</h1>
+        <div class="p-field p-mt-3">
+          <label for="login" class="p-d-block">Username</label>
+          <input id="login" formControlName="username" type="text" pInputText class="p-inputtext-lg p-d-block p-mt-1" placeholder="Digite seu login" style="width: 100%;">
+          <div *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)">
+            <small *ngIf="loginForm.controls['username'].errors.required">Campo de username obrigatório</small>
+          </div>
+        </div>
+        <div class="p-field p-mt-3">
+          <label for="senha" class="p-d-block">Senha</label>
+          <input id="senha" formControlName="password"  type="password" pInputText class="p-inputtext-lg p-d-block p-mt-1" placeholder="Digite sua senha" style="width: 100%;">
+          <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+            <small *ngIf="loginForm.controls['password'].errors.required">Campo de senha obrigatório</small>
+            <small *ngIf="loginForm.controls['password'].errors.minlength">A senha deve ter no mínimo 4 caracteres</small>
+            <small *ngIf="loginForm.controls['password'].errors.maxlength">A senha deve ter no máximo 10 caracteres</small>
+          </div>
+        </div>
+        <div>
+          <button pButton label="Entrar" type="submit"></button>
+          <button pButton class="p-mt-2" [routerLink]="['/cadastro/']" label="Cadastrar"></button> 
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+	

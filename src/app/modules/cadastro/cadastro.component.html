@@ -1,0 +1,34 @@
+<div class="p-container p-fluid">
+  <div class="p-grid p-jc-center p-ai-center vertical-container p-mt-15 p-p-5 h-100">
+    <div class="p-col-12 p-md-6 p-jc-start p-p-0">
+        <img src="assets/header.png"  style="width: 100%" />
+    </div>
+
+    <div class="p-col-12 p-md-3 p-jc-end p-shadow-3 p-p-5 card-cadastro">
+      <div class="p-ai-center vertical-container">
+        <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+        <div class="p-fluid p-p-2">
+          <h1 class="p-text-center">Cadastrar novo Jogador</h1>
+          <div class="p-field p-mt-3">
+            <label for="login" class="p-d-block">Username</label>
+            <input id="login" formControlName="username" type="text" pInputText class="p-inputtext-lg p-d-block p-mt-1" placeholder="Digite seu login" style="width: 100%;">
+            <div *ngIf="cadastroForm.controls['username'].invalid && (cadastroForm.controls['username'].dirty || cadastroForm.controls['username'].touched)">
+              <small *ngIf="cadastroForm.controls['username'].errors.required">Campo de username obrigatório</small>
+            </div>
+          </div>
+          <div class="p-field p-mt-3">
+            <label for="senha" class="p-d-block">Senha</label>
+            <input id="senha" formControlName="password"  type="password" pInputText class="p-inputtext-lg p-d-block p-mt-1" placeholder="Digite sua senha" style="width: 100%;">
+            <div *ngIf="cadastroForm.controls['password'].invalid && (cadastroForm.controls['password'].dirty || cadastroForm.controls['password'].touched)">
+              <small *ngIf="cadastroForm.controls['password'].errors.required">Campo de senha obrigatório</small>
+              <small *ngIf="cadastroForm.controls['password'].errors.minlength">A senha deve ter no mínimo 4 caracteres</small>
+              <small *ngIf="cadastroForm.controls['password'].errors.maxlength">A senha deve ter no máximo 10 caracteres</small>
+            </div>
+          </div>
+          <button pButton type="submit" class="p-button-success p-mt-3" label="Cadastrar"></button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
